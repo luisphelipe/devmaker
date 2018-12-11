@@ -26,3 +26,6 @@ Route::get('/password', function() {
 Route::get('/password', 'PasswordController@index');
 Route::put('/password', 'PasswordController@edit');
 
+Route::get('/post', 'PostController@index');
+Route::post('/post', 'PostController@store');
+
