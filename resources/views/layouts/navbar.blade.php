@@ -13,9 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/post">Posts</a>
                 </li> 
-                {{-- <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="/favorite">Favoritos</a>
-                </li>  --}}
+                </li> 
             </ul>
 
             <!-- Right Side Of Navbar -->

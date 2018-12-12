@@ -16,6 +16,7 @@ class PostController extends Controller
     {
         // dd(auth()->user()->favorites->toArray());
         return view('post.index', [
+            'pageTitle' => 'Posts',
             'posts' => Post::orderBy('created_at', 'DESC')->get(),
             'favorites' => array_map(function ($fav) {
                 return $fav['id'];

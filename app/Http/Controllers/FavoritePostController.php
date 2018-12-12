@@ -6,14 +6,15 @@ use Illuminate\Http\Request;
 
 class FavoritePostController extends Controller
 {
-    // public function index() {
-    //     return view('post.index', [
-    //         'posts' => auth()->user()->favorites()->orderBy('created_at', 'DESC')->get(),
-    //         'favorites' => array_map(function ($fav) {
-    //             return $fav['id'];
-    //         }, auth()->user()->favorites->toArray())
-    //     ]);
-    // }
+    public function index() {
+        return view('post.index', [
+            'pageTitle' => 'Favoritos',
+            'posts' => auth()->user()->favorites()->orderBy('created_at', 'DESC')->get(),
+            'favorites' => array_map(function ($fav) {
+                return $fav['id'];
+            }, auth()->user()->favorites->toArray())
+        ]);
+    }
 
     public function store(Request $request) {
         $data = $request->validate([

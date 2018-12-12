@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Posts</div>
+                <div class="card-header">{{ $pageTitle }}</div>
                 
                 <form  action="/post" method="POST">
                     @csrf
