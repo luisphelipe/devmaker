@@ -25,6 +25,23 @@
                         <h5 class="card-title">
                             {{ $post->title }}
                         </h5>
+                        <form action="/favorite" method="POST" id="favorite-form-{{ $post->id }}">
+                            @csrf
+
+                            <input type="number" name="post_id" value="{{ $post->id }}" hidden>
+
+                            <a href="#" onclick="event.preventDefault(); 
+                                document.getElementById('favorite-form-{{ $post->id }}').submit();">
+
+                            @if (in_array($post->id, $favorites))
+                                <img src="{{ asset('/svg/heart.svg') }}" alt="Fav" style="width: 15px">
+                            @else
+                                <img src="{{ asset('/svg/heart-outline.svg') }}" alt="Fav" style="width: 15px">
+                            @endif
+                            </a>
+                            <button class="btn" type="submit" hidden></button>
+                            
+                        </form>
                     </div>
                     <p class="card-text">
                         {{ $post->body }}

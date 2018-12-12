@@ -14,8 +14,12 @@ class PostController extends Controller
      */
     public function index()
     {
+        // dd(auth()->user()->favorites->toArray());
         return view('post.index', [
-            'posts' => Post::orderBy('created_at', 'DESC')->get()
+            'posts' => Post::orderBy('created_at', 'DESC')->get(),
+            'favorites' => array_map(function ($fav) {
+                return $fav['id'];
+            }, auth()->user()->favorites->toArray())
         ]);
     }
 
@@ -38,6 +42,6 @@ class PostController extends Controller
             'body' => $data['body']
         ]);
 
-        return redirect('/post');
+        return redirect()->back();
     }
 }

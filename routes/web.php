@@ -29,3 +29,8 @@ Route::put('/password', 'PasswordController@edit');
 Route::get('/post', 'PostController@index');
 Route::post('/post', 'PostController@store');
 
+// Route::get('/favorite', 'FavoritePostController@index');
+Route::post('/favorite', 'FavoritePostController@store');
+
+
+
