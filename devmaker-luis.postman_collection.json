@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "fe0c96fe-b00d-42c3-9f4e-ad653dba6132",
+		"name": "devmaker-luis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SIGNUP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": " application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": " XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "APITest",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "dummy@localhost.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": " application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": " XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "dummy@localhost.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGOUT",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImI1MzFlOGM2MmE0MWU4ZjA5OWRjYjhkYWVhYjQyODg3NWYyYWMxNDVlNjk4Y2I1NTk1MWM0ZmY5Nzc0YTE0MTY4YTMzYmJiYTk2M2NhODg3In0.eyJhdWQiOiIxIiwianRpIjoiYjUzMWU4YzYyYTQxZThmMDk5ZGNiOGRhZWFiNDI4ODc1ZjJhYzE0NWU2OThjYjU1OTUxYzRmZjk3NzRhMTQxNjhhMzNiYmJhOTYzY2E4ODciLCJpYXQiOjE1NDQ3MDYxMjEsIm5iZiI6MTU0NDcwNjEyMSwiZXhwIjoxNTc2MjQyMTIxLCJzdWIiOiIxMiIsInNjb3BlcyI6W119.j7QzKjcodndNTtKQIBdt3sv5UeHPCpUN7nL5tcoQDsfp0y8ezo6-PVYKqTFguwM6KajsMoQGluyFIIdor-0Lf3eqbQe3ONEXUNiCevIvFlxB-7oUihv3ZzBOcwxT2f8tRLmah4TlkCocYbmBfUsT3K3DDqXW-QtDTHbnqcdpZY8Qiy3MW7nXnSLDFfWR_XJGLWYmczE5_b9jPckp-EkJOw8cNVjme3ZYvJDBYjtR_p1BXj7-bbJdswQTlHC20NSFLITBK2ooFUZY_BwKdZNAPBI19qLFrohFqzfyvrOqvrZfGJR6LmuP24b1UoVzd3iiaigI-c6O5e8dckifOMNOZNWgg15ulsMGKHLscYlVqIvfKC5yMNkihvAnKpy6CUEe3yt__Hmlw_i68XFWhgXw_7uc_hr11aJDSCXviMU5VZNGZbk2UfqghZvJ8x0PDAFj4VBrPv_IzEPZqRGHBUfJT6n9pljz-_jrg8SzM0wiwBlt49CW-4GvG1PAzhXeVNC4Tb6prwGMSQliuA_dKYzIBKz3-d_eBvky0TG24ZjLvNIFywcqT7oN3Y84yoA9cq6KRqiWwAXOgJ6zubPjhDKqQRlEINoumzhC81Im3Ib7zWg4bIskquFn4h1Moa1iqcjsgRpUqn3mQun4dv5s5j8ZYxV46_JM3O6Jnq5IkxPX9n4",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": " application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": " XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "USER",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImI1MzFlOGM2MmE0MWU4ZjA5OWRjYjhkYWVhYjQyODg3NWYyYWMxNDVlNjk4Y2I1NTk1MWM0ZmY5Nzc0YTE0MTY4YTMzYmJiYTk2M2NhODg3In0.eyJhdWQiOiIxIiwianRpIjoiYjUzMWU4YzYyYTQxZThmMDk5ZGNiOGRhZWFiNDI4ODc1ZjJhYzE0NWU2OThjYjU1OTUxYzRmZjk3NzRhMTQxNjhhMzNiYmJhOTYzY2E4ODciLCJpYXQiOjE1NDQ3MDYxMjEsIm5iZiI6MTU0NDcwNjEyMSwiZXhwIjoxNTc2MjQyMTIxLCJzdWIiOiIxMiIsInNjb3BlcyI6W119.j7QzKjcodndNTtKQIBdt3sv5UeHPCpUN7nL5tcoQDsfp0y8ezo6-PVYKqTFguwM6KajsMoQGluyFIIdor-0Lf3eqbQe3ONEXUNiCevIvFlxB-7oUihv3ZzBOcwxT2f8tRLmah4TlkCocYbmBfUsT3K3DDqXW-QtDTHbnqcdpZY8Qiy3MW7nXnSLDFfWR_XJGLWYmczE5_b9jPckp-EkJOw8cNVjme3ZYvJDBYjtR_p1BXj7-bbJdswQTlHC20NSFLITBK2ooFUZY_BwKdZNAPBI19qLFrohFqzfyvrOqvrZfGJR6LmuP24b1UoVzd3iiaigI-c6O5e8dckifOMNOZNWgg15ulsMGKHLscYlVqIvfKC5yMNkihvAnKpy6CUEe3yt__Hmlw_i68XFWhgXw_7uc_hr11aJDSCXviMU5VZNGZbk2UfqghZvJ8x0PDAFj4VBrPv_IzEPZqRGHBUfJT6n9pljz-_jrg8SzM0wiwBlt49CW-4GvG1PAzhXeVNC4Tb6prwGMSQliuA_dKYzIBKz3-d_eBvky0TG24ZjLvNIFywcqT7oN3Y84yoA9cq6KRqiWwAXOgJ6zubPjhDKqQRlEINoumzhC81Im3Ib7zWg4bIskquFn4h1Moa1iqcjsgRpUqn3mQun4dv5s5j8ZYxV46_JM3O6Jnq5IkxPX9n4",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": " application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": " XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImI1MzFlOGM2MmE0MWU4ZjA5OWRjYjhkYWVhYjQyODg3NWYyYWMxNDVlNjk4Y2I1NTk1MWM0ZmY5Nzc0YTE0MTY4YTMzYmJiYTk2M2NhODg3In0.eyJhdWQiOiIxIiwianRpIjoiYjUzMWU4YzYyYTQxZThmMDk5ZGNiOGRhZWFiNDI4ODc1ZjJhYzE0NWU2OThjYjU1OTUxYzRmZjk3NzRhMTQxNjhhMzNiYmJhOTYzY2E4ODciLCJpYXQiOjE1NDQ3MDYxMjEsIm5iZiI6MTU0NDcwNjEyMSwiZXhwIjoxNTc2MjQyMTIxLCJzdWIiOiIxMiIsInNjb3BlcyI6W119.j7QzKjcodndNTtKQIBdt3sv5UeHPCpUN7nL5tcoQDsfp0y8ezo6-PVYKqTFguwM6KajsMoQGluyFIIdor-0Lf3eqbQe3ONEXUNiCevIvFlxB-7oUihv3ZzBOcwxT2f8tRLmah4TlkCocYbmBfUsT3K3DDqXW-QtDTHbnqcdpZY8Qiy3MW7nXnSLDFfWR_XJGLWYmczE5_b9jPckp-EkJOw8cNVjme3ZYvJDBYjtR_p1BXj7-bbJdswQTlHC20NSFLITBK2ooFUZY_BwKdZNAPBI19qLFrohFqzfyvrOqvrZfGJR6LmuP24b1UoVzd3iiaigI-c6O5e8dckifOMNOZNWgg15ulsMGKHLscYlVqIvfKC5yMNkihvAnKpy6CUEe3yt__Hmlw_i68XFWhgXw_7uc_hr11aJDSCXviMU5VZNGZbk2UfqghZvJ8x0PDAFj4VBrPv_IzEPZqRGHBUfJT6n9pljz-_jrg8SzM0wiwBlt49CW-4GvG1PAzhXeVNC4Tb6prwGMSQliuA_dKYzIBKz3-d_eBvky0TG24ZjLvNIFywcqT7oN3Y84yoA9cq6KRqiWwAXOgJ6zubPjhDKqQRlEINoumzhC81Im3Ib7zWg4bIskquFn4h1Moa1iqcjsgRpUqn3mQun4dv5s5j8ZYxV46_JM3O6Jnq5IkxPX9n4",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": " application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": " XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"post"
+					]
+				},
+				"description": "Pega lista de posts"
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImI1MzFlOGM2MmE0MWU4ZjA5OWRjYjhkYWVhYjQyODg3NWYyYWMxNDVlNjk4Y2I1NTk1MWM0ZmY5Nzc0YTE0MTY4YTMzYmJiYTk2M2NhODg3In0.eyJhdWQiOiIxIiwianRpIjoiYjUzMWU4YzYyYTQxZThmMDk5ZGNiOGRhZWFiNDI4ODc1ZjJhYzE0NWU2OThjYjU1OTUxYzRmZjk3NzRhMTQxNjhhMzNiYmJhOTYzY2E4ODciLCJpYXQiOjE1NDQ3MDYxMjEsIm5iZiI6MTU0NDcwNjEyMSwiZXhwIjoxNTc2MjQyMTIxLCJzdWIiOiIxMiIsInNjb3BlcyI6W119.j7QzKjcodndNTtKQIBdt3sv5UeHPCpUN7nL5tcoQDsfp0y8ezo6-PVYKqTFguwM6KajsMoQGluyFIIdor-0Lf3eqbQe3ONEXUNiCevIvFlxB-7oUihv3ZzBOcwxT2f8tRLmah4TlkCocYbmBfUsT3K3DDqXW-QtDTHbnqcdpZY8Qiy3MW7nXnSLDFfWR_XJGLWYmczE5_b9jPckp-EkJOw8cNVjme3ZYvJDBYjtR_p1BXj7-bbJdswQTlHC20NSFLITBK2ooFUZY_BwKdZNAPBI19qLFrohFqzfyvrOqvrZfGJR6LmuP24b1UoVzd3iiaigI-c6O5e8dckifOMNOZNWgg15ulsMGKHLscYlVqIvfKC5yMNkihvAnKpy6CUEe3yt__Hmlw_i68XFWhgXw_7uc_hr11aJDSCXviMU5VZNGZbk2UfqghZvJ8x0PDAFj4VBrPv_IzEPZqRGHBUfJT6n9pljz-_jrg8SzM0wiwBlt49CW-4GvG1PAzhXeVNC4Tb6prwGMSQliuA_dKYzIBKz3-d_eBvky0TG24ZjLvNIFywcqT7oN3Y84yoA9cq6KRqiWwAXOgJ6zubPjhDKqQRlEINoumzhC81Im3Ib7zWg4bIskquFn4h1Moa1iqcjsgRpUqn3mQun4dv5s5j8ZYxV46_JM3O6Jnq5IkxPX9n4",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": " application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": " XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Post teste",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "Esse post foi feito a partir do Postman",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FAVORITE",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImI1MzFlOGM2MmE0MWU4ZjA5OWRjYjhkYWVhYjQyODg3NWYyYWMxNDVlNjk4Y2I1NTk1MWM0ZmY5Nzc0YTE0MTY4YTMzYmJiYTk2M2NhODg3In0.eyJhdWQiOiIxIiwianRpIjoiYjUzMWU4YzYyYTQxZThmMDk5ZGNiOGRhZWFiNDI4ODc1ZjJhYzE0NWU2OThjYjU1OTUxYzRmZjk3NzRhMTQxNjhhMzNiYmJhOTYzY2E4ODciLCJpYXQiOjE1NDQ3MDYxMjEsIm5iZiI6MTU0NDcwNjEyMSwiZXhwIjoxNTc2MjQyMTIxLCJzdWIiOiIxMiIsInNjb3BlcyI6W119.j7QzKjcodndNTtKQIBdt3sv5UeHPCpUN7nL5tcoQDsfp0y8ezo6-PVYKqTFguwM6KajsMoQGluyFIIdor-0Lf3eqbQe3ONEXUNiCevIvFlxB-7oUihv3ZzBOcwxT2f8tRLmah4TlkCocYbmBfUsT3K3DDqXW-QtDTHbnqcdpZY8Qiy3MW7nXnSLDFfWR_XJGLWYmczE5_b9jPckp-EkJOw8cNVjme3ZYvJDBYjtR_p1BXj7-bbJdswQTlHC20NSFLITBK2ooFUZY_BwKdZNAPBI19qLFrohFqzfyvrOqvrZfGJR6LmuP24b1UoVzd3iiaigI-c6O5e8dckifOMNOZNWgg15ulsMGKHLscYlVqIvfKC5yMNkihvAnKpy6CUEe3yt__Hmlw_i68XFWhgXw_7uc_hr11aJDSCXviMU5VZNGZbk2UfqghZvJ8x0PDAFj4VBrPv_IzEPZqRGHBUfJT6n9pljz-_jrg8SzM0wiwBlt49CW-4GvG1PAzhXeVNC4Tb6prwGMSQliuA_dKYzIBKz3-d_eBvky0TG24ZjLvNIFywcqT7oN3Y84yoA9cq6KRqiWwAXOgJ6zubPjhDKqQRlEINoumzhC81Im3Ib7zWg4bIskquFn4h1Moa1iqcjsgRpUqn3mQun4dv5s5j8ZYxV46_JM3O6Jnq5IkxPX9n4",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": " application/json"
+					},
+					{
+						"key": "X-Requested-With",
+						"type": "text",
+						"value": " XMLHttpRequest"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/favorite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"favorite"
+					]
+				},
+				"description": "pega lista de posts favoritos"
+			},
+			"response": []
+		},
+		{
+			"name": "FAVORITE",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImI1MzFlOGM2MmE0MWU4ZjA5OWRjYjhkYWVhYjQyODg3NWYyYWMxNDVlNjk4Y2I1NTk1MWM0ZmY5Nzc0YTE0MTY4YTMzYmJiYTk2M2NhODg3In0.eyJhdWQiOiIxIiwianRpIjoiYjUzMWU4YzYyYTQxZThmMDk5ZGNiOGRhZWFiNDI4ODc1ZjJhYzE0NWU2OThjYjU1OTUxYzRmZjk3NzRhMTQxNjhhMzNiYmJhOTYzY2E4ODciLCJpYXQiOjE1NDQ3MDYxMjEsIm5iZiI6MTU0NDcwNjEyMSwiZXhwIjoxNTc2MjQyMTIxLCJzdWIiOiIxMiIsInNjb3BlcyI6W119.j7QzKjcodndNTtKQIBdt3sv5UeHPCpUN7nL5tcoQDsfp0y8ezo6-PVYKqTFguwM6KajsMoQGluyFIIdor-0Lf3eqbQe3ONEXUNiCevIvFlxB-7oUihv3ZzBOcwxT2f8tRLmah4TlkCocYbmBfUsT3K3DDqXW-QtDTHbnqcdpZY8Qiy3MW7nXnSLDFfWR_XJGLWYmczE5_b9jPckp-EkJOw8cNVjme3ZYvJDBYjtR_p1BXj7-bbJdswQTlHC20NSFLITBK2ooFUZY_BwKdZNAPBI19qLFrohFqzfyvrOqvrZfGJR6LmuP24b1UoVzd3iiaigI-c6O5e8dckifOMNOZNWgg15ulsMGKHLscYlVqIvfKC5yMNkihvAnKpy6CUEe3yt__Hmlw_i68XFWhgXw_7uc_hr11aJDSCXviMU5VZNGZbk2UfqghZvJ8x0PDAFj4VBrPv_IzEPZqRGHBUfJT6n9pljz-_jrg8SzM0wiwBlt49CW-4GvG1PAzhXeVNC4Tb6prwGMSQliuA_dKYzIBKz3-d_eBvky0TG24ZjLvNIFywcqT7oN3Y84yoA9cq6KRqiWwAXOgJ6zubPjhDKqQRlEINoumzhC81Im3Ib7zWg4bIskquFn4h1Moa1iqcjsgRpUqn3mQun4dv5s5j8ZYxV46_JM3O6Jnq5IkxPX9n4",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": " application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": " XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
