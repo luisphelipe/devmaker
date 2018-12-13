@@ -13,17 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('login', 'PassportController@login');
-Route::post('signup', 'PassportController@signup');
+Route::post('/login', 'PassportController@login');
+Route::post('/signup', 'PassportController@signup');
 
 Route::group([
     'middleware' => 'auth:api'
     ], function() {
-        Route::get('post', 'PostController@index');
-        Route::post('post', 'PostController@store');
-
-        Route::get('logout', 'PassportController@logout');
-        Route::get('user', 'PassportController@user');
+        Route::get('/logout', 'PassportController@logout');
+        Route::get('/user', 'PassportController@user');
 
         Route::get('/post', 'PostController@index');
         Route::post('/post', 'PostController@store');
