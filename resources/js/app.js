@@ -20,7 +20,8 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('post-form', require('./components/postForm.vue'));
+Vue.component('post-item', require('./components/postItem.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,5 +30,35 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        onlyFav: false,
+        posts: {},
+        favorites: {},
+        user: {}
+    },
+    methods: {
+        toggleFav(id) {
+            index = this.favorites.indexOf(id);
+            if (index > -1) {
+                this.favorites.splice(index, 1);
+            }
+            else {
+                this.favorites.push(id);
+            }
+        },
+        verifyURL: function() {
+            console.log(this.$route);
+        }
+    },
+    mounted() {
+        axios
+        .get('http://localhost:8000/post')
+        .then(response => {
+            this.posts = response.data.posts;
+            this.favorites = response.data.favorites;
+            this.user = response.data.user;
+            console.log(response.data);
+        })
+    }
 });

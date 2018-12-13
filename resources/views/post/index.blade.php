@@ -4,53 +4,21 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ $pageTitle }}</div>
+            <post-form v-on:new-post="posts.splice(0, 0, $event)"></post-form>
                 
-                <form  action="/post" method="POST">
-                    @csrf
-                    <div class="d-flex justify-content-center align-items-center mt-1 border-bottom">
-                        <div class="form-group w-75">
-                            <input class="form-control my-2" type="text" name="title" placeholder="Titulo">
-                            <textarea class="form-control" name="body" placeholder="Conteudo"></textarea>
-                        </div>
-
-                        <button class="btn mx-2" type="submit">Postar</button>
-                    </div>
-                </form>
-
+            <div class="card mt-2">
+            <div v-if="onlyFav" class="card-header">Favoritos</div>
+            <div v-else class="card-header">Ultimos Posts</div>
                 <div class="card-body">
-                @foreach ($posts as $post)
-                    <div class="d-flex justify-content-between">
-                        <h5 class="card-title">
-                            {{ $post->title }}
-                        </h5>
-                        <form action="/favorite" method="POST" id="favorite-form-{{ $post->id }}">
-                            @csrf
-
-                            <input type="number" name="post_id" value="{{ $post->id }}" hidden>
-
-                            <a href="#" onclick="event.preventDefault(); 
-                                document.getElementById('favorite-form-{{ $post->id }}').submit();">
-
-                            @if (in_array($post->id, $favorites))
-                                <img src="{{ asset('/svg/heart.svg') }}" alt="Fav" style="width: 15px">
-                            @else
-                                <img src="{{ asset('/svg/heart-outline.svg') }}" alt="Fav" style="width: 15px">
-                            @endif
-                            </a>
-                            <button class="btn" type="submit" hidden></button>
-                            
-                        </form>
+                    <div v-for="post in posts">
+                        <post-item v-show="!onlyFav || favorites.includes(post.id)" :title="post.title" :name="post.name" :fav="favorites.includes(post.id)" :key="post.id" :chav="post.id" v-on:toggle-fav="toggleFav($event)">
+                            @{{ post.body }}
+                        </post-item>
                     </div>
-                    <p class="card-text">
-                        {{ $post->body }}
-                    </p>
-                    <hr>
-                @endforeach
-
                 </div>
+
             </div>
+
         </div>
     </div>
 </div>

@@ -19,6 +19,15 @@ Route::post('signup', 'PassportController@signup');
 Route::group([
     'middleware' => 'auth:api'
     ], function() {
+        Route::get('post', 'PostController@index');
+        Route::post('post', 'PostController@store');
+
         Route::get('logout', 'PassportController@logout');
         Route::get('user', 'PassportController@user');
+
+        Route::get('/post', 'PostController@index');
+        Route::post('/post', 'PostController@store');
+        
+        Route::get('/favorite', 'FavoritePostController@index');
+        Route::post('/favorite', 'FavoritePostController@store');
 });
