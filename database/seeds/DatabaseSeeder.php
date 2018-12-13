@@ -15,12 +15,13 @@ class DatabaseSeeder extends Seeder
         $admin = factory('App\User')->create([
             'name' => 'Admin',
             'email' => 'admin@luisphelipe.me'
+            // 'password' => 'secret' por padrao
         ]);
 
         $users = factory('App\User', 10)->create();
 
         foreach($users as $user) {
-            factory('App\Post', 3)->create([
+            factory('App\Post')->create([
                 'user_id' => $user->id
             ]);
         }
