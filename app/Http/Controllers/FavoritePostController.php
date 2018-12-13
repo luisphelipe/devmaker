@@ -8,12 +8,8 @@ class FavoritePostController extends Controller
 {
     // nao estou usando essa funcao, deixei apenas pra API
     public function index() {
-        return view('post.index', [
-            'pageTitle' => 'Favoritos',
+        return response()->json([
             'posts' => auth()->user()->favorites()->orderBy('created_at', 'DESC')->get(),
-            'favorites' => array_map(function ($fav) {
-                return $fav['id'];
-            }, auth()->user()->favorites->toArray())
         ]);
     }
 
