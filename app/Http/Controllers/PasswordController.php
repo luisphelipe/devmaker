@@ -28,6 +28,6 @@ class PasswordController extends Controller
         $user->password = Hash::make($data['new_password']);
         $user->save();
 
-        return view('home');
+        return redirect('/');
     }
 }
