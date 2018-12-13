@@ -30,6 +30,7 @@
         props: ['title', 'name', 'fav', 'chav'],
         data: () => ({
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            url: document.querySelector('meta[name="req-url"]').getAttribute('content'),
             favorite: false,
         }),
         methods: { 
@@ -38,7 +39,7 @@
                 this.$emit('toggle-fav', this.chav)
 
                 axios
-                .post('http://localhost:8000/favorite', {
+                .post(this.url + '/favorite', {
                     'post_id': this.chav
                 })
                 .then(response => {

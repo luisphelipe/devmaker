@@ -20,13 +20,14 @@
     export default {
         data: () => ({
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            url: document.querySelector('meta[name="req-url"]').getAttribute('content'),
             title: '',
             body: ''
         }),
         methods: { 
             newPost() {
                 axios
-                .post('http://localhost:8000/post', {
+                .post(this.url + '/post', {
                     'title': this.title,
                     'body': this.body
                 })

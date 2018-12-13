@@ -33,6 +33,7 @@ const app = new Vue({
     el: '#app',
     data: {
         onlyFav: false,
+        url: document.querySelector('meta[name="req-url"]').getAttribute('content'),
         posts: {},
         favorites: {},
         user: {}
@@ -53,7 +54,7 @@ const app = new Vue({
     },
     mounted() {
         axios
-        .get('http://localhost:8000/post')
+        .get(this.url + '/post')
         .then(response => {
             this.posts = response.data.posts;
             this.favorites = response.data.favorites;
